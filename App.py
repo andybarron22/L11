@@ -8,7 +8,7 @@ import tensorflow as tf
 def load_model_and_preprocessor():
     with open('preprocessor.pkl', 'rb') as f:
         preprocessor = pickle.load(f)
-    model = tf.keras.models.load_model('tf_bridge_model.h5')
+    model = tf.keras.models.load_model('tf_bridge_model.h5', compile=False)
     return model, preprocessor
 
 model, preprocessor = load_model_and_preprocessor()
